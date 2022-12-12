@@ -30,3 +30,4 @@ function playRound(playerSelection, computerSelection) {
 }
 
 console.log(playRound(playerSelection, computerSelection));
+console.log("Testing to make sure it's all good");
