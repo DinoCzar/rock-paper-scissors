@@ -2,9 +2,6 @@ function getComputerChoice() {
     return Math.floor(Math.random() * 3)
 }
 
-// let userInput = prompt("Choose Rock, Paper, or Scissors");
-
-const playerSelection = 0;
 const computerSelection = getComputerChoice();
 
 var userInput=prompt("Enter Rock, Paper, or Scissors:");
@@ -21,7 +18,7 @@ function userSelection() {
    }
 }
 
-console.log(userSelection());
+const playerSelection = userSelection();
 
 // playerSelection and computerSelection 0 = Rock, 1 = Paper, 2 = Scissors
 // result 0 = Tie, 1 = Player Win, 2 = Computer Win
@@ -48,6 +45,8 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+console.log(userSelection());
+console.log(computerSelection)
 console.log(playRound(playerSelection, computerSelection));
 
 for (let i = 1; i < 6; i++) {
