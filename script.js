@@ -10,11 +10,11 @@ const computerSelection = getComputerChoice();
 var userInput=prompt("Enter Rock, Paper, or Scissors:");
 
 function userSelection() {
-   if (userInput === "rock") {
+   if (userInput.toLowerCase() === "rock") {
     return 0;
-   } else if (userInput === "paper") {
+   } else if (userInput.toLowerCase() === "paper") {
     return 1;
-   } else if (userInput === "scissors") {
+   } else if (userInput.toLowerCase() === "scissors") {
     return 2;
    } else {
     return "Not a valid entry, Please enter Rock, Paper, or Scissors"
