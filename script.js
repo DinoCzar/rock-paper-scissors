@@ -23,7 +23,7 @@ const playerSelection = userSelection();
 // playerSelection and computerSelection 0 = Rock, 1 = Paper, 2 = Scissors
 // result 0 = Tie, 1 = Player Win, 2 = Computer Win
 
-function playRound(playerSelection, computerSelection) {
+function playRound() {
     if (playerSelection === 0 && computerSelection === 0) {
     return 0;
     } else if (playerSelection === 0 && computerSelection === 1) {
