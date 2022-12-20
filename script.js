@@ -1,8 +1,8 @@
 const myArray = ["Rock", "Paper", "Scissors"];
 
-var playerScore;
+var playerScore = 0;
 
-var computerScore;
+var computerScore = 0;
 
 function playRound() {
     var playerSelection = prompt("Enter Rock, Paper, or Scissors:"); 
@@ -21,8 +21,6 @@ function playRound() {
 game();
 
 function game() {
-    playerScore = 0;
-    computerScore = 0;
     for (var i = 1; i < 6; i++) {
         console.log(playRound());
     }
