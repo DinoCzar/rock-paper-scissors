@@ -79,11 +79,30 @@ function playRound(playerSelection, computerSelection) {
 }
 */
 
+
+
+
 const myArray = ["Rock", "Paper", "Scissors"];
 
-var getComputerChoice = myArray[Math.floor(Math.random() * myArray.length)];
+var computerSelection = myArray[Math.floor(Math.random() * myArray.length)];
 
-console.log(getComputerChoice);
+var playerSelection = "Scissors";
+
+function playRound() {
+    if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
+        return "Tie";
+    } else if ((playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "paper") || 
+        (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "scissors") || 
+        (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "rock")) {
+        return "Lose";
+    } else {
+        return "Win";
+    }
+}
+
+console.log("Player:   " + playerSelection)
+console.log("Computer: " + computerSelection);
+console.log("Result:   " + playRound())
 
 var playerScore = 0;
 var computerScore = 0;
