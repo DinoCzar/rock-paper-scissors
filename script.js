@@ -80,39 +80,126 @@ function playRound(playerSelection, computerSelection) {
 */
 
 
-
-
 const myArray = ["Rock", "Paper", "Scissors"];
 
-var computerSelection = myArray[Math.floor(Math.random() * myArray.length)];
+var playerScore;
 
-var playerSelection = "Scissors";
+var computerScore;
 
 function playRound() {
+    var playerSelection = prompt("Enter Rock, Paper, or Scissors:"); 
+    var computerSelection = myArray[Math.floor(Math.random() * myArray.length)];
     if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
-        return "Tie";
+        return playerSelection + " vs " + computerSelection + ". Player Score: " + playerScore + " / Computer Score: " + computerScore;
     } else if ((playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "paper") || 
         (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "scissors") || 
         (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "rock")) {
-        return "Lose";
+        return playerSelection + " vs " + computerSelection + ". Player Score: " + playerScore + " / Computer Score: " + ++computerScore;
     } else {
-        return "Win";
+        return playerSelection + " vs " + computerSelection + ". Player Score: " + ++playerScore + " / Computer Score: " + computerScore;
     }
 }
 
-console.log("Player:   " + playerSelection)
-console.log("Computer: " + computerSelection);
-console.log("Result:   " + playRound())
+game();
 
-var playerScore = 0;
-var computerScore = 0;
+function game() {
+    playerScore = 0;
+    computerScore = 0;
+    for (var i = 1; i < 6; i++) {
+        console.log(playRound());
+    }
+}
+
+/*
 
 for (var i = 0; i < 6; i++) {
     console.log("Round " + i + " SCORE: Player: " + playerScore + " / Computer: " + computerScore) 
-    playerScore++;
-    if (i>2) {
+    if (playRound() === "Win") {
+        playerScore++;
+    } else if (playRound() === "Lose") {
         computerScore++;
     } else {
-        computerScore=0;
+        playerScore;
+        computerScore;
     }
 }
+*/
+
+
+
+
+/*
+
+
+const myArray = [
+    'Rock',
+    'Paper',
+    'Scissors'
+];
+
+function computerPlay() {
+  return myArray[~~(Math.random()*myArray.length)]
+}
+
+let computerSelection;
+let playerSelection;
+let computerScore;
+let playerScore;
+
+game();
+
+function game () {
+  computerScore=0;
+  playerScore=0;
+  for (let i=0; i<5; i++) {
+    onUserInput();
+  }
+  console.log(declareWinner());
+  
+  function declareWinner() {
+    if (playerScore===computerScore) {
+      alert(playerScore + '-' + computerScore + '\nTie game!');
+      return playerScore + '-' + computerScore + '\nTie game!';
+    } else if (playerScore>computerScore) {
+      alert(playerScore + '-' + computerScore + '\nYou win!!');
+      return playerScore + '-' + computerScore + '\nYou win!!';
+    } else {
+      alert(playerScore + '-' + computerScore + '\nYou lost. Better luck next time!');
+      return playerScore + '-' + computerScore + '\nYou lost. Better luck next time!';
+    }
+  }
+}
+
+function onUserInput() {
+  playerSelection = prompt('Rock, Paper, or Scissors?', '');
+    if ((playerSelection.toLowerCase()=='rock')
+        ||(playerSelection.toLowerCase()=='paper')
+        ||(playerSelection.toLowerCase()=='scissors')) {
+      console.log(playRound(playerSelection,computerSelection));
+    } else {
+    alert('That\'s not a valid choice.');
+    onUserInput();
+  }
+}
+
+function playRound() {
+    computerSelection = computerPlay().toLowerCase();
+    playerSelection = playerSelection.toLowerCase();
+    if (computerSelection==playerSelection) {
+        alert('Tie game!');
+        return 'Tie game\nComputer Score: ' + 
+                computerScore + '\nYour Score: ' + playerScore;
+    } else if ((computerSelection=='rock' && playerSelection=='scissors') 
+              || (computerSelection=='scissors' && playerSelection=='paper') 
+              || (computerSelection=='paper' && playerSelection=='rock')) {
+        alert('You lose! ' + computerSelection + ' beats ' + playerSelection);
+        return 'Computer Score: ' + ++computerScore + 
+                '\nYour Score: ' + playerScore;
+    } else {
+        alert('You win! ' + playerSelection + ' beats ' + computerSelection);
+        return 'Your Score: ' + ++playerScore + 
+                '\nComputer Score: ' + computerScore;
+    }
+}
+
+*/
