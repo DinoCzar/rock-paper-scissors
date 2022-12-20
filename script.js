@@ -79,11 +79,17 @@ function playRound(playerSelection, computerSelection) {
 }
 */
 
+const myArray = ["Rock", "Paper", "Scissors"];
+
+var getComputerChoice = myArray[Math.floor(Math.random() * myArray.length)];
+
+console.log(getComputerChoice);
+
 var playerScore = 0;
 var computerScore = 0;
 
 for (var i = 0; i < 6; i++) {
-    console.log("Round: " + i + " SCORE: Player: " + playerScore + " Computer: " + computerScore) 
+    console.log("Round " + i + " SCORE: Player: " + playerScore + " / Computer: " + computerScore) 
     playerScore++;
     if (i>2) {
         computerScore++;
@@ -91,9 +97,3 @@ for (var i = 0; i < 6; i++) {
         computerScore=0;
     }
 }
-
-/*
-
-" SCORE: Player: " + playerScore + " Computer: " + computerScore )
-
-*/
