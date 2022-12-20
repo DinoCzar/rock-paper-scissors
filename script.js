@@ -18,10 +18,19 @@ function playRound() {
     }
 }
 
-game();
-
 function game() {
-    for (var i = 1; i < 6; i++) {
-        console.log(playRound());
+    for (var i = 1; i < 7; i++) {
+        if (i<6) {
+            console.log(playRound());
+        } else {
+            if (playerScore > computerScore) {
+                console.log("FINAL SCORE: Player: " + playerScore + " / Computer: " + computerScore + " / YOU WIN! ");
+            } else {
+                console.log("FINAL SCORE: Player: " + playerScore + " / Computer: " + computerScore + " / YOU LOSE! ");
+            }
+        }
     }
 }
+
+game();
+
