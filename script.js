@@ -1,53 +1,13 @@
+
+/*
 function getComputerChoice() {
     return Math.floor(Math.random() * 3)
 }
 
 const computerSelection = getComputerChoice();
 
-var userInput=prompt("Enter Rock, Paper, or Scissors:");
-
-function userSelection() {
-   if (userInput.toLowerCase() === "rock") {
-    return 0;
-   } else if (userInput.toLowerCase() === "paper") {
-    return 1;
-   } else if (userInput.toLowerCase() === "scissors") {
-    return 2;
-   } else {
-    return "Not a valid entry, Please enter Rock, Paper, or Scissors"
-   }
-}
-
-const playerSelection = userSelection();
-
 // playerSelection and computerSelection 0 = Rock, 1 = Paper, 2 = Scissors
 // result 0 = Tie, 1 = Player Win, 2 = Computer Win
-
-function playRound() {
-    if (playerSelection === 0 && computerSelection === 0) {
-    return 0;
-    } else if (playerSelection === 0 && computerSelection === 1) {
-    return 2;
-    } else if (playerSelection === 0 && computerSelection === 2) {
-    return 1;
-    } else if (playerSelection === 1 && computerSelection === 0) {
-    return 1;
-    } else if (playerSelection === 1 && computerSelection === 1) {
-    return 0;
-    } else if (playerSelection === 1 && computerSelection === 2) {
-    return 2;
-    } else if (playerSelection === 2 && computerSelection === 0) {
-    return 2;
-    } else if (playerSelection === 2 && computerSelection === 1) {
-    return 1;
-    } else if (playerSelection === 2 && computerSelection === 2) {
-    return 0;
-    }
-}
-
-console.log(userSelection());
-console.log(computerSelection)
-console.log(playRound(playerSelection, computerSelection));
 
 for (let i = 1; i < 6; i++) {
     const playerScore = 0;
@@ -55,9 +15,47 @@ for (let i = 1; i < 6; i++) {
     console.log("Round " + i + ": SCORE: Player: " + playerScore + " / Computer: " + computerScore);
 }
 
+var playerSelection=prompt("Enter Rock, Paper, or Scissors:"); 
 
+function playerSelection() {
+    if (playerSelection.toLowerCase() === "rock") {
+        return 0;
+        } else if (playerSelection.toLowerCase() === "paper") {
+        return 1;
+        } else if (playerSelection.toLowerCase() === "scissors") {
+        return 2;
+        } else {
+        return "Not a valid entry, Please enter Rock, Paper, or Scissors"
+        }
+}
+
+function playRound() {
+        if (playerSelection === 0 && computerSelection === 0) {
+        return 0;
+        } else if (playerSelection === 0 && computerSelection === 1) {
+        return 2;
+        } else if (playerSelection === 0 && computerSelection === 2) {
+        return 1;
+        } else if (playerSelection === 1 && computerSelection === 0) {
+        return 1;
+        } else if (playerSelection === 1 && computerSelection === 1) {
+        return 0;
+        } else if (playerSelection === 1 && computerSelection === 2) {
+        return 2;
+        } else if (playerSelection === 2 && computerSelection === 0) {
+        return 2;
+        } else if (playerSelection === 2 && computerSelection === 1) {
+        return 1;
+        } else if (playerSelection === 2 && computerSelection === 2) {
+        return 0;
+        }
+    }
+
+console.log(computerSelection)
+console.log(playRound());
 
 /*
+
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === 0 && computerSelection === 0) {
     return "It's a tie! Rock ties with Rock.";
@@ -79,4 +77,23 @@ function playRound(playerSelection, computerSelection) {
     return "It's a tie! Scissors ties with Scissors.";
     }
 }
+*/
+
+var playerScore = 0;
+var computerScore = 0;
+
+for (var i = 0; i < 6; i++) {
+    console.log("Round: " + i + " SCORE: Player: " + playerScore + " Computer: " + computerScore) 
+    playerScore++;
+    if (i>2) {
+        computerScore++;
+    } else {
+        computerScore=0;
+    }
+}
+
+/*
+
+" SCORE: Player: " + playerScore + " Computer: " + computerScore )
+
 */
