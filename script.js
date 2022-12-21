@@ -13,8 +13,12 @@ function playRound() {
         (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "scissors") || 
         (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "rock")) {
         return playerSelection + " vs " + computerSelection + ". Player Score: " + playerScore + " / Computer Score: " + ++computerScore;
-    } else {
+    } else if ((playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "scissors") || 
+    (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "rock") || 
+    (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "paper")) {
         return playerSelection + " vs " + computerSelection + ". Player Score: " + ++playerScore + " / Computer Score: " + computerScore;
+    } else {
+        return "Not a valid entry, please enter Rock, Paper, or Scissors";
     }
 }
 
