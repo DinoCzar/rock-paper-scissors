@@ -29,8 +29,10 @@ function game() {
         } else {
             if (playerScore > computerScore) {
                 console.log("FINAL SCORE: Player: " + playerScore + " / Computer: " + computerScore + " / YOU WIN! ");
-            } else {
+            } else if (playerScore < computerScore) {
                 console.log("FINAL SCORE: Player: " + playerScore + " / Computer: " + computerScore + " / YOU LOSE! ");
+            } else {
+                console.log("FINAL SCORE: Player: " + playerScore + " / Computer: " + computerScore + " / IT'S A TIE! ");
             }
         }
     }
