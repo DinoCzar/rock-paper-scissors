@@ -19,15 +19,18 @@ buttons.forEach((button) => {
         } else if (computerScore === 5) {
             content.textContent = "Computer Wins!"
         } else if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
-            content.textContent = (playerSelection + " vs " + computerSelection + ". Player Score: " + playerScore + " / Computer Score: " + computerScore);
+            content.textContent = (playerSelection + " vs " + computerSelection + 
+            ". Player Score: " + playerScore + " / Computer Score: " + computerScore);
         } else if ((playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "paper") || 
             (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "scissors") || 
             (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "rock")) {
-            content.textContent = (playerSelection + " vs " + computerSelection + ". Player Score: " + playerScore + " / Computer Score: " + ++computerScore);
+            content.textContent = (playerSelection + " vs " + computerSelection + ". Player Score: " + 
+            playerScore + " / Computer Score: " + ++computerScore);
         } else if ((playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "scissors") || 
             (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "rock") || 
             (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "paper")) {
-            content.textContent = (playerSelection + " vs " + computerSelection + ". Player Score: " + ++playerScore + " / Computer Score: " + computerScore);
+            content.textContent = (playerSelection + " vs " + computerSelection + ". Player Score: " + 
+            ++playerScore + " / Computer Score: " + computerScore);
         } else {
             content.textContent = ("Not a valid entry, please enter Rock, Paper, or Scissors");
         }    
